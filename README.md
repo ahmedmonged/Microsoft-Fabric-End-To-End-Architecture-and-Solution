@@ -7,49 +7,44 @@
 
 
 ## Overview
+This project aims to build an end-to-end data architecture and solution using Microsoft Fabric. The solution will ingest data from three different sources:
+- **API**
+- **On-premises systems**
+- **Data Lake**
 
-This project aims to build an end-to-end architecture and solution utilizing Microsoft Fabric for data ingestion, processing, and storage. The solution incorporates a Medallion Architecture model, with data flowing through various layers and supporting multiple data sources. The entire process will be automated using pipelines, ensuring incremental loading and daily updates to lakehouses and warehouses.
-
-### Key Components:
-
-1. **Data Ingestion**: The solution ingests data from three different sources:
-   - **API**: Data pulled from external APIs.
-   - **On-premises**: Data sourced from on-premises systems.
-   - **Data Lake**: Data gathered from an existing data lake.
-
-2. **Medallion Architecture**: We implement the Medallion Architecture to streamline data processing across multiple layers:
-   - **Bronze Layer**: Raw data stored in a Lakehouse.
-   - **Silver Layer**: Cleaned and structured data stored in a Lakehouse.
-   - **Gold Layer**: Refined, business-ready data stored in a multi-table data warehouse. This layer supports multiple departments and domains.
-
-3. **Data Processing**: Data processing is conducted using notebooks, leveraging PySpark capabilities to efficiently handle large-scale data operations. These notebooks are central to transforming raw data into usable insights.
-
-4. **Incremental Loading and Automation**: The data processing is automated using pipelines. Incremental loading ensures that only new or modified data is processed, minimizing unnecessary computation. The pipelines are scheduled to run on a daily basis, ensuring the lakehouses and warehouses are continuously updated.
-
-5. **Error Handling and Logging**: Actions are logged, and errors are handled by sending notifications. This enables effective debugging and tracing of any issues that arise, ensuring smooth operations and timely resolution.
-
-6. **Data Consumption**: The final output is used to populate multiple dashboards, which are scheduled to refresh regularly. This ensures that business users have up-to-date information to make data-driven decisions.
+We will implement the Medallion Architecture for the enterprise and automate the entire process, ensuring that data is ingested and processed efficiently. The architecture will leverage pipelines for daily updates to the lakehouses and warehouses, with data being added incrementally.
 
 ## Architecture Diagram
 
 ![Architecture Diagram](img/arhitdesginmedallionFabric.jpg)
 
-## Key Technologies Used
+### Medallion Architecture
+The Medallion Architecture in this solution is designed as follows:
+- **Bronze Layer**: Raw data is ingested and stored in a Lakehouse.
+- **Silver Layer**: Cleaned and transformed data is stored in another Lakehouse.
+- **Gold Layer**: Refined data stored in a multitable warehouse, supporting multiple departments and domains.
 
-- **Microsoft Fabric**: Platform for data ingestion, transformation, and storage.
-- **PySpark**: For large-scale data processing and management.
-- **Lakehouses**: A hybrid storage system that combines the best aspects of data lakes and data warehouses.
-- **Data Warehouses**: Structured storage optimized for querying and analysis.
+### Ingestion & Data Processing
+- **API**: Data will be ingested from external APIs.
+- **On-Premises**: Data will be ingested from on-premises systems.
+- **Data Lake**: Data will be sourced from the existing data lake.
 
-## Steps to Run the Solution
+We will process and manage large-scale data using **PySpark** in notebooks, taking advantage of the powerful capabilities of Microsoft Fabric for processing and scaling.
 
-1. **Data Ingestion**: Set up the data sources (API, on-premises, and data lake) for ingestion.
-2. **Pipeline Setup**: Create and configure the pipelines for automated data loading.
-3. **Data Transformation**: Implement data transformation notebooks using PySpark.
-4. **Incremental Loading**: Ensure that data is loaded incrementally to avoid unnecessary computations.
-5. **Error Handling**: Configure error handling to log and notify users of issues.
-6. **Visualization**: Set up dashboards to visualize the processed data, ensuring they refresh periodically.
+### Incremental Loading
+The solution will implement **incremental loading** to ensure only new or changed data is processed, optimizing performance and minimizing resource usage.
 
-## Contributing
+### Automation with Pipelines
+We will automate the entire process using **pipelines**, ensuring that data is continuously added to the lakehouses and warehouses on a daily basis. This will include automated data transformations and loading to the various layers.
 
-If you would like to contribute to this project, feel free to fork the repository and submit pull requests. Ensure that any code changes adhere to the established guidelines.
+### Error Handling and Logging
+We will log actions and handle any errors that may arise during the process. This includes:
+- **Error Notifications**: Notifications will be sent if any errors occur.
+- **Action Logging**: All actions will be logged for debugging and tracing issues.
+
+## Final Data Consumption
+
+Once the data is processed and refined through the Medallion Architecture, it will feed into multiple **dashboards**. These dashboards will be scheduled to refresh regularly, ensuring that business users have access to up-to-date data to make informed, data-driven decisions.
+
+## Conclusion
+This project leverages the power of Microsoft Fabric to automate and scale data processing while ensuring a smooth flow from raw data ingestion to actionable insights. With the Medallion Architecture, automated pipelines, and robust error handling, this solution is designed to support business intelligence and decision-making at the enterprise level.
