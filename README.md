@@ -1,5 +1,11 @@
 # End-to-End Architecture and Solution Using Microsoft Fabric
 
+---
+### Brief Walkthrough Video
+
+[![Microsoft Fabric End-To-End Architecture & Solution](https://ytcards.demolab.com/?id=zMvgg2BRlOY&title=Microsoft+Fabric+End-To-End+Architecture+%26+Solution&lang=en&timestamp=1737729650&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=2&width=500&border_radius=10)](https://www.youtube.com/watch?v=zMvgg2BRlOY)
+
+
 ## Overview
 
 This project aims to build an end-to-end architecture and solution utilizing Microsoft Fabric for data ingestion, processing, and storage. The solution incorporates a Medallion Architecture model, with data flowing through various layers and supporting multiple data sources. The entire process will be automated using pipelines, ensuring incremental loading and daily updates to lakehouses and warehouses.
@@ -47,7 +53,3 @@ This project aims to build an end-to-end architecture and solution utilizing Mic
 ## Contributing
 
 If you would like to contribute to this project, feel free to fork the repository and submit pull requests. Ensure that any code changes adhere to the established guidelines.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
