@@ -26,7 +26,7 @@ This project aims to build an end-to-end architecture and solution utilizing Mic
 
 ## Architecture Diagram
 
-_You may want to insert a diagram of your architecture here for better clarity._
+![Architecture Diagram](img/arhitdesginmedallionFabric.jpg)
 
 ## Key Technologies Used
 
